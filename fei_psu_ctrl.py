@@ -6,8 +6,8 @@ class PMBus():
     # Configure the first interface (IF/1) of the FTDI device as an I2C master
     def __init__(self):
         self.i2c = I2cController()
-        # self.i2c.configure('ftdi://ftdi:232h:FT6AP51K/1')
-        self.i2c.configure('ftdi://ftdi:232h:1/1')
+        # self.i2c.configure('ftdi://ftdi:232h:FT6AP51K/1')     # FTDI Breakout Cable
+        self.i2c.configure('ftdi://ftdi:232h:1/1')              # Adafruit Blue i2c board
         self.slave = self.i2c.get_port(0x00)
 
     def connect_to_slave(self,adr):
